@@ -44,7 +44,6 @@ ul {
     display: flex;
 }
 
-
 .main-nav ul li {
     padding: 0px 10px;
 }
@@ -55,11 +54,20 @@ ul {
 
 .main-nav ul li a:hover {
     border-bottom: 2px solid #262626;
-} 
+}
 
 .main-nav ul.main-menu {
     flex: 1;
     margin-left: 20px;
+}
+
+.menu-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 2;
+    display: none;
 }
 
 .btn {
@@ -79,7 +87,6 @@ ul {
 
 .dark {
     color: #fff;
-
 }
 
 .dark .btn {
@@ -102,7 +109,8 @@ ul {
     margin-bottom: 20px;
 }
 
-.showcase h2, .showcase p {
+.showcase h2,
+.showcase p {
     margin-bottom: 10px;
 }
 
@@ -152,7 +160,8 @@ ul {
     padding: 50px 0 0 30px;
 }
 
-.xbox p, .carbon p {
+.xbox p,
+.carbon p {
     margin: 10px 0 20px;
 }
 
@@ -161,7 +170,7 @@ ul {
 .carbon {
     width: 100%;
     height: 350px;
-    background: url("./img/carbon.jpg") no-repeat center center/cover;
+    background: url('./img/carbon.jpg') no-repeat center center/cover;
 }
 
 .carbon .content {
@@ -225,7 +234,7 @@ ul {
 
 .footer div i {
     margin-right: 10px;
-} 
+}
 
 .footer ul {
     display: flex;
@@ -235,4 +244,82 @@ ul {
 .footer li {
     margin-right: 30px;
     margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .menu-btn {
+        display: block ;
+    }
+
+    .menu-btn:hover {
+        opacity: 0.5;
+    }
+
+    .main-nav ul.right-menu {
+        margin-right: 50px;
+    }
+
+    .main-nav ul.main-menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #f2f2f2;
+        width: 50%;
+        height: 100%;
+        border-right: #ccc 1px solid;
+        opacity: 0.9;
+        padding: 30px;
+        transform: translateX(-500px);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .main-nav ul.main-menu li {
+        padding: 10px;
+        border-bottom: #ccc solid 1px;
+        font-size: 14px;
+    }
+
+    .main-nav ul.main-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav ul.main-menu.show {
+        transform: translateX(-20px);
+    }
+
+    .home-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .xbox .content p {
+        display: none;
+    }
+
+    .xbox .content h2 {
+        margin-bottom: 20px;
+    }
+
+    .carbon .content {
+        width: 85%;
+    }
+
+    .links .links-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+    .home-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .links .links-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .links .links-inner {
+        margin-bottom: 20px;
+    }
+
 }
